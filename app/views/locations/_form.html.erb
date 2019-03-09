@@ -1,4 +1,4 @@
- <%= form_with(model: [@trip, @location], local: true, class: "ui form") do |f| %>
+ <%= form_with(model: [@trip, @location], local: true) do |f| %>
  
  <div class = "field">
   <%=f.label :name %>
@@ -10,35 +10,7 @@
   <%= f.text_field :days, placeholder: "Number of Days" %>
   </div>
 
-  <div class = "field">
-  <%= f.label :street%>
-  <%= f.text_field :street, placeholder: "Street" %>
-  </div>
- 
-  <div class = "field">
-  <%= f.label :city%>
-  <%= f.text_field :city, placeholder: "City" %>
-  </div>
-
-  <div class = "field">
-  <%= f.label :state %>
-  <%= f.text_field :state, placeholder: "State" %>
-  </div>
-
-  <div class = "field">
-  <%= f.label :zip %>
-  <%= f.text_field :zip, placeholder: "Zip Code" %>
-  </div>
   
-  <div class = "field">
-  <%= f.label :longitude %>
-  <%= f.text_field :longitude, placeholder: "longitude" %>
-  </div>
-
-  <div class = "field">
-  <%= f.label :latitude %>
-  <%= f.text_field :latitude, placeholder: "latitude" %>
-  </div>
 
   <%= f.submit%>
 

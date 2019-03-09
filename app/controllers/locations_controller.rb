@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_trip, except: [:update, :destroy]
-  before_action :set_location, only: [:show, :edit, :udpate, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy]
   def index
     @locations = @trip.locations
   end
@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
 
   def update 
     if @location.update(location_params)
-      redirect_to [@trip, @location]
+      redirect_to trip_path
     else
       render :edit
     end
