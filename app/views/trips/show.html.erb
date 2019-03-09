@@ -8,7 +8,7 @@ Add a Location </h1>
     <div class="content">
       
       <% @trip.locations.each do |location|%>
-        <h1><%= link_to location.name, trip_locations_path(location) %> |
+        <h1><%= link_to location.name, trip_locations_path(@trip) %> |
         <%= link_to [@trip, location], method: :delete do %>
         <i class="ui red trash icon"></i>
         <% end %> |
