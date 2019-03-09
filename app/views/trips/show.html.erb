@@ -1,1 +1,10 @@
-<h1><%= @trip.name %></h1>
+<h1>All Locations</h1>
+<%= link_to 'Add Location', new_trip_location_path(@trip) %>
+<ul>
+  <% @trip.locations.each do |location| %>
+    <li><%= "#{location.name} - #{location.days} days"%></li>
+  <% end %>
+   <% location.addresses.each do |address|%>
+      <%= address.street %>
+    <% end%>
+</ul>

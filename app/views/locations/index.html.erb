@@ -1,2 +1,23 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<h1>Lists</h1>          
+<%= link_to "New Location", new_trip_location_path, class: "ui inverted blue button tiny" %>
+<hr />
+
+
+<% @locations.each do |location| %>
+  <div class="ui cards">
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          <h2><%= location.name %></h2>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui three buttons">
+        <%= link_to "View Address", location_address_path(location), class: "ui inverted green button tiny" %>
+        <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui inverted blue button tiny" %>
+        <%= link_to "Delete Location", trip_location_path(@trip, location), method: :delete, class: "ui inverted red button tiny" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
