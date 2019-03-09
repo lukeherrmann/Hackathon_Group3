@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :set_trip
+  before_action :set_trip
     before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -19,9 +19,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @trip.reviews.new(review_params)
-    
+    binding.pry
     if @review.save
-      redirect_to [@trip, @review]
+      redirect_to [@trip, @reviews]
     else
       render :new
     end
@@ -41,6 +41,7 @@ def destroy
 end
 
 private
+
   def set_trip
     @trip = Trip.find(params[:trip_id])
   end

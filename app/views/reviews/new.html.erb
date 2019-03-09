@@ -1,14 +1,13 @@
 <h1>Add New Review</h1>
 <%= form_for [@trip,@review] do |f| %>
-<div class = "field" >
-  <label><%= f.label :comments %><label>
-  <%= f.text_field :comments %>
-  </div>
 
-  <div class = "field" >
+<%= f.label :comments %>
+  <%= f.text_field :comments %>
+  
+
   <%= f.label :author %>
   <%= f.text_field :author %>
-  </div>
+
   
  
 
