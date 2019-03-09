@@ -16,10 +16,12 @@ end
 
  resources :trips do 
   resources :locations
- end
+  end
 
  resources :locations do 
   resources :addresses
- end
-  
+  end
+  resources :trips do
+    resources :reviews
+  end
 end
