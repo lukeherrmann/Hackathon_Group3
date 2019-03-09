@@ -1,8 +1,7 @@
-<div class="ui right floated white submit button">
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-    </div>
+
 <img class="ui centered big image" src="https://images.unsplash.com/photo-1520520731457-9283dd14aa66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="AmazingTrips">
 <h1>Click a Trip to view details</h1>
+<h3><%= link_to 'Add New Trip', new_trip_path %>
 <div class="ui massive relaxed divided list">
 <% @trips.each_with_index do |trip| %>
 <div class="ui segment">
@@ -10,10 +9,15 @@
     
     <div class="content">
      <h1><i class="ui plane icon"></i>
-     <a class="header"><%= link_to trip.name, trip %></a></h1>
-     <h3><%= trip.start_date %> - <%= trip.end_date %></h3>
+     <a class="header"><%= link_to trip.name, trip %></a> |
+      <%= link_to edit_trip_path(trip) do %> <i class="pencil icon"></i> 
+      <% end %> |
+      <%= link_to trip_path(trip), method: :delete do %> <i class="red trash icon"></i>
+      <% end %>
+      </h1>
+     <h3><%= trip.start_date.strftime('%a, %b, %d, %Y')  %> - <%= trip.end_date.strftime('%a, %b, %d, %Y')  %></h3>
      <br />
-      <div class="description">Click to view</div>
+      <div class="description">Click the name for more info</div>
       </div>
     </div>
   </div>
