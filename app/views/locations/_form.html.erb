@@ -1,3 +1,5 @@
+ <%= form_with(model: [@trip, @location], local: true, class: "ui form") do |f| %>
+ 
  <div class = "field">
   <%=f.label :name %>
   <%=f.text_field :name, required: true, placeholder: "Name of Location" %>
@@ -35,5 +37,9 @@
 
   <div class = "field">
   <%= f.label :latitude %>
-  <%= f.label :latitude, placeholder: "latitude" %>
+  <%= f.text_field :latitude, placeholder: "latitude" %>
   </div>
+
+  <%= f.submit%>
+
+  <% end %>

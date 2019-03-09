@@ -51,3 +51,4 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:name, :days)
   end
+end
