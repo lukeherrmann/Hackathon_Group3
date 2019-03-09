@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :set_trip
+  before_action :set_trip
     before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,18 +12,16 @@ class ReviewsController < ApplicationController
 
   def new
     @review = @trip.reviews.new
-    render partial: "form"
   end
 
   def edit
-    render partial: "form"
   end
 
   def create
-    @review = @trip.reviews.new(topic_params)
-    
+    @review = @trip.reviews.new(review_params)
+    binding.pry
     if @review.save
-      redirect_to [@trip, @review]
+      redirect_to [@trip, @reviews]
     else
       render :new
     end
@@ -43,6 +41,7 @@ def destroy
 end
 
 private
+
   def set_trip
     @trip = Trip.find(params[:trip_id])
   end
@@ -52,6 +51,6 @@ private
   end
 
   def review_params
-    params.require(:review).permit(:name, :body)
+    params.require(:review).permit(:comments, :author)
   end
 end
