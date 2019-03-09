@@ -10,13 +10,13 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = @location.addresses.new
+    @address = Address.new
   end
 
   def create
-    @address = @location.addresses.new(address_params)
+    @address = Address.new(address_params)
     if @address.save 
-      redirect_to trip_locations_path[@location, @address]
+      redirect_to trip_locations_path[@location.trip_id, @address]
     else
       render :new
     end
