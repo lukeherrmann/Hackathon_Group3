@@ -40,6 +40,10 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
+  def random
+    @randoms = Trip.random(5)
+  end
+
 private
   def set_trip
     @trip = Trip.find(params[:id])
