@@ -13,7 +13,11 @@
       <%= link_to edit_trip_path(trip) do %> <i class="pencil icon"></i> 
       <% end %> |
       <%= link_to trip_path(trip), method: :delete do %> <i class="red trash icon"></i>
-      <% end %>
+      <br>
+      <%= link_to "View Reviews", trip_reviews_path(trip) %> || 
+      <%= link_to "Add Review", new_trip_review_path(trip) %>
+        <% end %>
+
       </h1>
      <h3><%= trip.start_date.strftime('%a, %b, %d, %Y')  %> - <%= trip.end_date.strftime('%a, %b, %d, %Y')  %></h3>
      <br />

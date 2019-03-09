@@ -12,15 +12,13 @@ class ReviewsController < ApplicationController
 
   def new
     @review = @trip.reviews.new
-    render partial: "form"
   end
 
   def edit
-    render partial: "form"
   end
 
   def create
-    @review = @trip.reviews.new(topic_params)
+    @review = @trip.reviews.new(review_params)
     
     if @review.save
       redirect_to [@trip, @review]
@@ -52,6 +50,6 @@ private
   end
 
   def review_params
-    params.require(:review).permit(:name, :body)
+    params.require(:review).permit(:comments, :author)
   end
 end
