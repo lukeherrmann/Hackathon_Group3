@@ -1,5 +1,6 @@
-<form class="ui inverted form">
-<%= form_with(model: @trip, local: true, class: "ui form") do |f| %>
+
+<%= form_with(model: @trip, local: true) do |f| %>
+
   <div class = "field" >
   <%= f.label  :name %>
   <%= f.text_field :name, required: true, placeholder: "Name of Trip" %>
@@ -7,12 +8,12 @@
 
   <div class = "field" >
   <label><%= f.label :start_date %></label>
-  <%= f.datetime_field :start_date %>
+  <%= f.datetime_field :start_date, required: true %>
   </div>
 
   <div class = "field" >
   <%= f.label :end_date %>
-  <%= f.datetime_field :end_date %>
+  <%= f.datetime_field :end_date, required: true %>
   </div>
   
  
@@ -20,4 +21,4 @@
   <%= f.submit%>
 
   <%end %>
-  </form>
+ 
