@@ -1,7 +1,7 @@
 
 <img class="ui centered big image" src="https://images.unsplash.com/photo-1520520731457-9283dd14aa66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="AmazingTrips">
 <h1>Click a Trip to view details</h1>
-<h3><%= link_to 'Add New Trip', new_trip_path %>
+<h3><%= link_to 'Add New Trip', new_trip_path(@trips) %></h3>
 <div class="ui massive relaxed divided list">
 <% @trips.each_with_index do |trip| %>
 <div class="ui segment">
