@@ -39,7 +39,7 @@ class TripsController < ApplicationController
   end
 
   def random
-    @randoms = Trip.random(5)
+    @trips = current_user.trips.sample(5)
   end
 
 private
