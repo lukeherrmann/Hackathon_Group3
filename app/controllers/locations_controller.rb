@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_trip
+  before_action :set_trip, except: [:update, :destroy]
   before_action :set_location, only: [:show, :edit, :udpate, :destroy]
   def index
     @locations = @trip.locations
